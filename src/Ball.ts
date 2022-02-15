@@ -45,8 +45,44 @@ export class Ball extends THREE.Object3D
     }
 
     public update(deltaTime : number) : void
-    {
-        // Add your code here
+    {   
+
+
+        if(this.position.y < 2.6) {
+            this.position.y=2.6;
+            this.velocity.y = this.velocity.y *-1;
+            this.velocity.multiplyScalar(.8);
+        }      
+  
+        if(this.position.x > 40) {
+            this.position.x = 39
+            this.velocity.x = this.velocity.x *-1;
+            this.velocity.multiplyScalar(.8);
+        }
+        if(this.position.x < -40) {
+            this.position.x = -39
+            this.velocity.x = this.velocity.x *-1;
+            this.velocity.multiplyScalar(.8);
+        }
+        if(this.position.z > 50) {
+            this.position.z = 49
+            this.velocity.z = this.velocity.z *-1;
+            this.velocity.multiplyScalar(.8);
+        }
+        if(this.position.z < -50) {
+            this.position.z = -49
+            this.velocity.z = this.velocity.z *-1;
+            this.velocity.multiplyScalar(.8);
+        }
+
+        if(this.position.y > 35) {
+            this.position.y = 34;
+            this.velocity.y = this.velocity.y * -1;
+            this.velocity.multiplyScalar(.8);
+        }
+        this.position.x += this.velocity.x * deltaTime;
+        this.position.y += this.velocity.y * deltaTime;
+        this.position.z += this.velocity.z * deltaTime;
     }
 
     public updateShadow() : void

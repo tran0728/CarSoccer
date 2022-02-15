@@ -42,8 +42,29 @@ export class Car extends THREE.Object3D
 
     public update(deltaTime : number) : void
     {
-        this.position.x += this.velocity.x * deltaTime;
-        this.position.y += this.velocity.y * deltaTime;
-        this.position.z += this.velocity.z * deltaTime;
+        // this.position.x += this.velocity.x * deltaTime;
+        // this.position.y += this.velocity.y * deltaTime;
+        // this.position.z += this.velocity.z * deltaTime;
+
+        // this.position
+        if(this.position.x > 40) {
+            this.position.x = 40;
+        }
+        if(this.position.x < -40) {
+            this.position.x = -40;
+        }
+        if(this.position.z > 50) {
+            this.position.z = 50
+        }
+        if(this.position.z < -50) {
+            this.position.z = -50;
+        }
+        if(this.velocity.z > 30) {
+            this.velocity.z = 30;
+        }
+        if(this.velocity.z < -30) {
+            this.velocity.z = -30;
+        }
+        this.translateZ(this.velocity.z * deltaTime);
     }
 }
