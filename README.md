@@ -18,9 +18,6 @@ npm run start
 ```
 
 
-```
-
-```
 
 Webpack should launch your program in a web browser automatically.  If not, you can run it by pointing your browser at `http://localhost:8080`.
 
